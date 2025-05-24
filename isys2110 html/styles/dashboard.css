@@ -1,0 +1,331 @@
+/* Dashboard specific styles */
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.view-all {
+    font-size: 14px;
+    color: var(--hologram-blue);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* Planet Targets Card */
+.planet-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.planet-stat, .task-stat, .report-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.recent-planets h4, .upcoming-tasks h4, .system-alerts h4, .recent-reports h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.planet-list, .task-list, .alert-list, .report-list {
+    list-style: none;
+}
+
+.planet-list li, .task-list li, .alert-list li, .report-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.planet-list li:last-child, .task-list li:last-child, .alert-list li:last-child, .report-list li:last-child {
+    border-bottom: none;
+}
+
+.planet-name, .task-name, .report-name {
+    font-weight: 700;
+}
+
+.planet-threat {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Task Planning Card */
+.task-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.task-time {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Resource Management Card */
+.resource-summary {
+    margin-bottom: 20px;
+}
+
+.resource-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.resource-label {
+    width: 80px;
+    font-weight: 700;
+}
+
+.resource-value {
+    width: 50px;
+    text-align: right;
+}
+
+.alert-list li {
+    display: flex;
+    align-items: center;
+}
+
+.alert-icon {
+    margin-right: 10px;
+}
+
+/* Reports Card */
+.report-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.report-date {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Planet Grid Dashboard */
+.planet-grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.planet-card-mini {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.planet-card-mini:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.planet-header-mini {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.planet-header-mini h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.planet-header-mini .planet-threat {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.planet-details-mini {
+    margin-bottom: 8px;
+}
+
+.detail-mini {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 11px;
+}
+
+.detail-mini .label {
+    color: var(--steel-gray);
+    font-weight: 600;
+}
+
+.detail-mini .value {
+    font-weight: 700;
+}
+
+.planet-actions-mini {
+    display: flex;
+    gap: 5px;
+}
+
+.edit-btn-mini, .view-btn-mini {
+    background: none;
+    border: 1px solid var(--steel-gray);
+    color: var(--text-light);
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.edit-btn-mini:hover, .view-btn-mini:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Planet Targets Card Specific */
+.planet-targets-card {
+    grid-column: span 2;
+}
+
+.planet-targets-card .card-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .planet-targets-card {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .planet-grid-dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dashboard Image Section */
+.dashboard-image-section {
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-image-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-image-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--hologram-blue);
+    margin: 0 0 8px 0;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.dashboard-image-header p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    font-style: italic;
+}
+
+.dashboard-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-image {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments for image */
+@media (max-width: 768px) {
+    .dashboard-image-section {
+        margin-top: 20px;
+        padding: 15px 0;
+    }
+
+    .dashboard-image-container {
+        padding: 15px;
+    }
+
+    .dashboard-image {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-image {
+        max-height: 250px;
+    }
+}

@@ -1,0 +1,297 @@
+/* Main CSS for Death Star Dashboard */
+:root {
+    /* Color palette based on the design document */
+    --main-dark: #14171A;
+    --empire-red: #BC1F1F;
+    --steel-gray: #9A9A9A;
+    --hologram-blue: #1F68BC;
+    --text-light: #FFFFFF;
+    --text-secondary: #CCCCCC;
+    --card-bg: #1E2328;
+    --sidebar-bg: #0D0F11;
+    --progress-bg: #2A2E33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* App Container */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: var(--empire-red);
+}
+
+.logo p {
+    font-size: 12px;
+    color: var(--steel-gray);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav-links li {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-links li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links li.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--empire-red);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links .icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.user-info {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--steel-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.user-role {
+    font-size: 12px;
+    color: var(--steel-gray);
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.top-nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.top-nav-actions button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.alert-btn, .settings-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.login-btn, .register-btn {
+    background-color: var(--hologram-blue);
+}
+
+.alert-btn .alert-count {
+    background-color: var(--empire-red);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Content Area */
+.content-area {
+    padding: 20px 0;
+}
+
+.content-area.hidden {
+    display: none;
+}
+
+/* Common Elements */
+button {
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    color: var(--hologram-blue);
+    text-decoration: none;
+}
+
+/* Status Colors */
+.high {
+    color: var(--empire-red);
+}
+
+.medium {
+    color: orange;
+}
+
+.low {
+    color: var(--hologram-blue);
+}
+
+/* Progress Bars */
+.progress-bar {
+    height: 8px;
+    background-color: var(--progress-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--hologram-blue);
+}
+
+/* Alerts */
+.alert-critical {
+    color: var(--empire-red);
+}
+
+.alert-warning {
+    color: orange;
+}
+
+.alert-stable {
+    color: var(--hologram-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        overflow-x: auto;
+        margin-top: 10px;
+    }
+    
+    .nav-links li {
+        padding: 10px;
+        white-space: nowrap;
+    }
+    
+    .user-info {
+        display: none;
+    }
+}
